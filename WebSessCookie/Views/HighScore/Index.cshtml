@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@*We write address *@
+
+<form action="@Url.Action("Index","HighScore")" method="post">
+    <input type="number" name="number" value="0" />
+    <input type="submit" value="Score" />
+</form>
+
+@if(ViewBag.MyNumbers!=null)
+{
+    @*it has to be array*@
+    @foreach (var item in (string[])ViewBag.MyNumbers)
+    {
+        <p>@item</p>
+    }
+
+    <p>@ViewBag.MyNumbers</p>
+}
